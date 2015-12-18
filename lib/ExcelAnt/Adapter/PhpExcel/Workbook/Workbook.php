@@ -57,6 +57,19 @@ class Workbook implements WorkbookExcelInterface
     }
 
     /**
+     * Get all sheets non-block
+     *
+     * @return Generator
+     */
+    public function getAllSheetsGenerator()
+    {
+        $sheetCount = count($this->sheetCollection);
+        for($i = 0; $i < $sheetCount; ++$i) {
+            yield $this->sheetCollection[$i];
+        }
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function getAllSheets()
