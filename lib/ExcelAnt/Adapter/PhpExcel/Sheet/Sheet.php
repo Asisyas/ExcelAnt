@@ -65,6 +65,17 @@ class Sheet implements SheetExcelInterface
     }
 
     /**
+     * @return \Generator
+     */
+    public function getCellsIterator()
+    {
+        $cc = count($this->cells);
+        for($i = 0; $i < $cc; ++$i) {
+            yield $this->cells[$i];
+        }
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function getCells()
@@ -81,6 +92,14 @@ class Sheet implements SheetExcelInterface
         $this->tables[] = $table;
 
         return $this;
+    }
+
+    public function getTablesIterator()
+    {
+        $tc = count($this->tables);
+        for($i = 0; $i < $tc; ++$i) {
+            yield $this->tables[$i];
+        }
     }
 
     /**

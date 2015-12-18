@@ -47,12 +47,12 @@ class Writer implements WriterInterface
             $phpExcel->addSheet($phpExcelWorksheet);
 
             // Write the tables
-            foreach ($sheet->getTables() as $table) {
+            foreach ($sheet->getTablesIterator() as $table) {
                 $this->tableWorker->writeTable($phpExcelWorksheet, $table);
             }
 
             // Write the individuals cells
-            foreach ($sheet->getCells() as $cell) {
+            foreach ($sheet->getCellsIterator() as $cell) {
                 $this->cellWorker->writeCell($cell, $phpExcelWorksheet, $cell->getCoordinate());
             }
         }
