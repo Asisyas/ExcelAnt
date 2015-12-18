@@ -41,7 +41,7 @@ class Writer implements WriterInterface
             $phpExcel->getDefaultStyle()->applyFromArray($styles);
         }
 
-        foreach ($workbook->getAllSheets() as $sheet) {
+        foreach ($workbook->getAllSheetsGenerator() as $sheet) {
             $phpExcelWorksheet = $sheet->getRawClass();
 
             $phpExcel->addSheet($phpExcelWorksheet);
