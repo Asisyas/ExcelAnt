@@ -14,7 +14,7 @@
     "require": {
         "php": ">=5.4.0",
 
-        "asisyas/phpexcel": "~1.8"
+        "asisyas/phpexcel": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.*",
